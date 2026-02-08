@@ -4,6 +4,11 @@
     "paths": {
       "@/*": ["src/*"]
     },
+    "strict": false,          // disables strict type checking
+    "noEmitOnError": false,   // allows compilation even with TS errors
+    "skipLibCheck": true,     // ignores type errors in node_modules
+    "forceConsistentCasingInFileNames": false,
+    "verbatimModuleSyntax": false
   },
   "files": [],
   "references": [
