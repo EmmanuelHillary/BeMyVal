@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import coupleImg from "@/assets/couple.png";
 import FallingHearts from "@/components/FallingHearts";
 import laughSound from "@/assets/music/laughing-dog-meme_RGJZz7yi.mp3";
+import emailjs from "@emailjs/browser";
 
 const NO_TEXTS = [
   "No 😢",
@@ -127,6 +128,25 @@ const Index = () => {
 
   const handleYes = () => {
     navigate("/yes");
+
+    emailjs
+    .send(
+      "service_7y7ltth",    // replace with your EmailJS service ID
+      "template_6cfsj1l",   // replace with your EmailJS template ID
+      {
+        user_name: "Hillary",
+        message: "Astrid clicked YES! 💖",
+      },
+      "vM3G4n7dys_ODDRj9"     // replace with your EmailJS public key
+    )
+    .then(
+      (response) => {
+        console.log("Email sent successfully!", response.status, response.text);
+      },
+      (error) => {
+        console.error("Failed to send email:", error);
+      }
+    );
   };
 
   // Removed old vibrateAnimation - now using key-based re-render for fresh animation each move
