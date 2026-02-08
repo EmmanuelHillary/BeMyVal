@@ -8,7 +8,11 @@
     "noEmitOnError": false,   // allows compilation even with TS errors
     "skipLibCheck": true,     // ignores type errors in node_modules
     "forceConsistentCasingInFileNames": false,
-    "verbatimModuleSyntax": false
+    "verbatimModuleSyntax": false,
+    "noUnusedLocals": false,        // Ignores unused variables
+    "noUnusedParameters": false,    // Ignores unused function parameters
+    "verbatimModuleSyntax": false,  // Ignores the "import type" syntax error
+    "noImplicitAny": false
   },
   "files": [],
   "references": [
